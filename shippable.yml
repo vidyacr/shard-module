@@ -21,7 +21,7 @@ before_script:
   - echo "extension=mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - echo "xdebug.max_nesting_level = 1000" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - composer self-update
-  - composer install
+  - composer install --prefer-source --no-interaction --dev
   
 script:
   - phpunit --log-junit shippable/testresults/junit.xml
